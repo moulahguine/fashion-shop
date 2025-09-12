@@ -1,0 +1,141 @@
+/* Header Component Styles */
+.header {
+  @apply bg-white shadow-sm border-b border-neutral-0 sticky top-0 z-50;
+}
+
+.header-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply flex items-center justify-between h-16;
+}
+
+.header-logo {
+  @apply flex-shrink-0;
+}
+
+.logo-link {
+  @apply text-primary font-bold text-xl no-underline hover:text-primary/80 transition-colors duration-200;
+}
+
+.header-nav {
+  @apply hidden md:flex flex-1 justify-center;
+}
+
+.nav-list {
+  @apply flex space-x-8;
+}
+
+.nav-item {
+  @apply list-none;
+}
+
+.nav-link {
+  @apply text-neutral-100 font-medium text-sm hover:text-primary transition-colors duration-200 no-underline;
+}
+
+.header-search {
+  @apply hidden lg:flex flex-1 max-w-md mx-8;
+}
+
+.search-form {
+  @apply w-full;
+}
+
+.search-container {
+  @apply relative;
+}
+
+.search-icon {
+  @apply absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-60;
+}
+
+.search-input {
+  @apply w-full pl-10 pr-4 py-2 border border-neutral-20 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+}
+
+.header-actions {
+  @apply flex items-center space-x-4;
+}
+
+.action-btn {
+  @apply relative p-2 text-neutral-100 hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg;
+}
+
+.cart-count {
+  @apply absolute -top-1 -right-1 bg-pinkRed text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold;
+}
+
+.join-btn {
+  @apply hidden sm:inline-flex;
+}
+
+.mobile-menu-btn {
+  @apply md:hidden p-2 text-neutral-100 hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg;
+}
+
+.mobile-nav {
+  @apply md:hidden bg-white border-t border-neutral-0;
+}
+
+.mobile-nav-content {
+  @apply px-4 py-2;
+}
+
+.mobile-nav-list {
+  @apply space-y-2;
+}
+
+.mobile-nav-item {
+  @apply list-none;
+}
+
+.mobile-nav-link {
+  @apply block px-3 py-2 text-neutral-100 font-medium hover:text-primary hover:bg-neutral-0 rounded-lg transition-colors duration-200 no-underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .header-search {
+    @apply hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    @apply px-4;
+  }
+
+  .header-actions {
+    @apply space-x-2;
+  }
+
+  .join-btn {
+    @apply hidden;
+  }
+}
+
+/* Sticky header enhancement */
+.header.sticky {
+  @apply shadow-md;
+}
+
+/* Focus states */
+.header-container button:focus,
+.header-container a:focus {
+  @apply outline-none ring-2 ring-primary ring-offset-2;
+}
+
+/* Animation for mobile menu */
+.mobile-nav {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

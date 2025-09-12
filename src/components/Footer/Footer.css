@@ -1,0 +1,142 @@
+/* Footer Component Styles */
+.footer {
+  @apply bg-neutral-80 text-white;
+}
+
+.footer-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  @apply py-12 border-b border-neutral-60;
+}
+
+.newsletter-content {
+  @apply max-w-2xl mx-auto text-center;
+}
+
+.newsletter-title {
+  @apply text-2xl font-bold mb-4;
+}
+
+.newsletter-description {
+  @apply text-neutral-40 mb-8;
+}
+
+.newsletter-form {
+  @apply w-full;
+}
+
+.newsletter-input-group {
+  @apply flex flex-col sm:flex-row gap-4 max-w-md mx-auto;
+}
+
+.newsletter-input-container {
+  @apply relative flex-1;
+}
+
+.newsletter-icon {
+  @apply absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-40;
+}
+
+.newsletter-input {
+  @apply w-full pl-10 pr-4 py-3 bg-neutral-100 text-neutral-100 border border-neutral-60 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder-neutral-40;
+}
+
+.newsletter-input::placeholder {
+  @apply text-neutral-40;
+}
+
+/* Footer Navigation */
+.footer-navigation {
+  @apply py-12 grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.footer-section {
+  @apply space-y-4;
+}
+
+.footer-section-title {
+  @apply text-lg font-semibold mb-4;
+}
+
+.footer-links {
+  @apply space-y-2;
+}
+
+.footer-link-item {
+  @apply list-none;
+}
+
+.footer-link {
+  @apply text-neutral-40 hover:text-white transition-colors duration-200 no-underline text-sm;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  @apply py-8 border-t border-neutral-60;
+}
+
+.footer-bottom-content {
+  @apply flex flex-col md:flex-row items-center justify-between gap-4;
+}
+
+.footer-copyright {
+  @apply text-neutral-40 text-sm;
+}
+
+.footer-social {
+  @apply flex space-x-4;
+}
+
+.footer-social-link {
+  @apply p-2 text-neutral-40 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-neutral-80 rounded-lg;
+}
+
+.footer-legal {
+  @apply flex flex-wrap gap-4;
+}
+
+.footer-legal-link {
+  @apply text-neutral-40 hover:text-white transition-colors duration-200 no-underline text-sm;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .newsletter-section {
+    @apply py-8;
+  }
+
+  .newsletter-title {
+    @apply text-xl;
+  }
+
+  .footer-navigation {
+    @apply py-8 grid-cols-1 gap-6;
+  }
+
+  .footer-bottom-content {
+    @apply flex-col text-center;
+  }
+
+  .footer-social {
+    @apply justify-center;
+  }
+
+  .footer-legal {
+    @apply justify-center;
+  }
+}
+
+/* Focus states */
+.footer-social-link:focus,
+.footer-link:focus,
+.footer-legal-link:focus {
+  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-neutral-80;
+}
+
+/* Hover effects */
+.footer-social-link:hover {
+  @apply transform scale-110;
+}
