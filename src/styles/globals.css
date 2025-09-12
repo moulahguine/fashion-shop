@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gilroy Font Face Declarations */
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/Gilroy-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/Gilroy-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/Gilroy-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    font-family: "Gilroy", sans-serif;
+  }
+
+  body {
+    @apply bg-neutral-000 text-neutral-100;
+  }
+
+  /* Typography Styles */
+  h1 {
+    @apply text-h1 font-bold leading-tight tracking-tight;
+  }
+
+  h2 {
+    @apply text-h2 font-bold leading-tight;
+  }
+
+  h3 {
+    @apply text-h3 font-semibold leading-snug;
+  }
+
+  h4 {
+    @apply text-h4 font-semibold leading-normal;
+  }
+
+  h5 {
+    @apply text-h5 font-medium leading-normal;
+  }
+
+  h6 {
+    @apply text-h6 font-medium leading-normal;
+  }
+
+  p {
+    @apply text-body leading-relaxed;
+  }
+
+  small {
+    @apply text-small leading-normal;
+  }
+
+  /* UI Label Styling */
+  .caps-label {
+    @apply text-small font-semibold uppercase tracking-wider;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Button Base Styles */
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-primary px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  /* Input Styles */
+  .input-field {
+    @apply w-full px-4 py-3 border border-neutral-20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-neutral-0 p-6;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-200 hover:shadow-md hover:-translate-y-1;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  /* Custom spacing utilities */
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Text color utilities */
+  .text-primary {
+    @apply text-primary;
+  }
+
+  .text-secondary {
+    @apply text-secondary;
+  }
+
+  .text-success {
+    @apply text-greenLight;
+  }
+
+  .text-error {
+    @apply text-pinkRed;
+  }
+
+  .text-warning {
+    @apply text-orangeShine;
+  }
+
+  .text-info {
+    @apply text-blueSea;
+  }
+}
