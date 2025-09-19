@@ -1,7 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
@@ -10,7 +17,14 @@ const Header = () => {
     <>
       {/* Header Wrapper */}
       <header
-        className="fixed top-0 left-0 right-0 z-50 w-full flex justify-center bg-white border-b border-gray-200"
+        className="fixed top-0 left-0 right-0 z-50 w-full flex justify-center bg-white/80 backdrop-blur-md border-b border-gray-200 transition-all duration-300"
+        style={{
+          backgroundColor:
+            scrollY > 50
+              ? "rgba(255, 255, 255, 0.9)"
+              : "rgba(255, 255, 255, 0.8)",
+          backdropFilter: scrollY > 50 ? "blur(12px)" : "blur(8px)",
+        }}
         role="navigation"
         aria-label="Main navigation"
       >
