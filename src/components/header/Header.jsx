@@ -10,11 +10,11 @@ const Header = () => {
     <>
       {/* Header Wrapper */}
       <header
-        className="w-full flex justify-center bg-white border-b border-gray-200"
+        className="fixed top-0 left-0 right-0 z-50 w-full flex justify-center bg-white border-b border-gray-200"
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="max-w-7xl mx-auto w-full flex items-center justify-between h-16 px-6">
+        <div className="max-w-7xl mx-auto w-full flex items-center justify-between  h-16 px-6">
           {/* Left: Logo */}
           <div className="flex-shrink-0">
             <a
