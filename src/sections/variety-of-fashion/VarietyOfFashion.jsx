@@ -68,11 +68,17 @@ const VarietyOfFashion = () => {
               />
 
               {/* Text Overlay */}
-              <div className="absolute bottom-2 left-2 text-white group-hover:underline">
-                <p className="text-3xl font-bold drop-shadow-lg">
+              <div className="absolute bottom-2 left-2 text-black group-hover:underline">
+                <p
+                  className="text-3xl font-bold drop-shadow-lg"
+                  style={{ textShadow: "0 0  5px  white" }}
+                >
                   {category.title}
                 </p>
-                <p className="text-3xl font-bold drop-shadow-lg">
+                <p
+                  className="text-3xl font-bold drop-shadow-lg"
+                  style={{ textShadow: "0 0  5px  white" }}
+                >
                   {category.subtitle}
                 </p>
               </div>
