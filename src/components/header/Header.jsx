@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,12 +32,12 @@ const Header = () => {
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between  h-16 px-6">
           {/* Left: Logo */}
           <div className="flex-shrink-0">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="text-2xl font-serif font-light text-gray-900 tracking-wide"
             >
               FashionShop
-            </a>
+            </Link>
           </div>
 
           {/* Center: Desktop Navigation */}
@@ -66,18 +67,18 @@ const Header = () => {
                 </svg>
               </button>
             </div>
-            <a
-              href="#men"
+            <Link
+              to="/men"
               className="text-xs font-medium text-gray-500 uppercase tracking-wider hover:text-gray-900 transition"
             >
               Men
-            </a>
-            <a
-              href="#women"
+            </Link>
+            <Link
+              to="/women"
               className="text-xs font-medium text-gray-500 uppercase tracking-wider hover:text-gray-900 transition"
             >
               Women
-            </a>
+            </Link>
           </nav>
 
           {/* Right: Actions */}
@@ -191,20 +192,20 @@ const Header = () => {
                   >
                     Products
                   </button>
-                  <a
-                    href="#men"
+                  <Link
+                    to="/men"
                     className="block text-sm font-medium text-gray-500 uppercase tracking-wider hover:text-gray-900 transition py-2"
                     onClick={closeMobileMenu}
                   >
                     Men
-                  </a>
-                  <a
-                    href="#women"
+                  </Link>
+                  <Link
+                    to="/women"
                     className="block text-sm font-medium text-gray-500 uppercase tracking-wider hover:text-gray-900 transition py-2"
                     onClick={closeMobileMenu}
                   >
                     Women
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Mobile Actions */}

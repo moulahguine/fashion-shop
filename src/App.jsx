@@ -1,18 +1,20 @@
-import Header from "./components/header/Header";
-import Hero from "./sections/hero/Hero";
-import ProductsGuide from "./sections/products-guide/ProductsGuide";
-import VarietyOfFashion from "./sections/variety-of-fashion/VarietyOfFashion";
-import Footer from "./components/footer/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import Home from "./pages/Home";
+import Men from "./pages/men/Men";
+import Women from "./pages/women/Women";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Hero />
-      <ProductsGuide />
-      <VarietyOfFashion />
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="men" element={<Men />} />
+          <Route path="women" element={<Women />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
