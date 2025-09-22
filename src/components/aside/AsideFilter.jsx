@@ -1,9 +1,22 @@
-const AsideFilter = ({ filters, onFilterChange }) => {
-  const categories = [
-    { value: "all", label: "All" },
-    { value: "sweaters", label: "Sweaters" },
-    { value: "tshirts", label: "T-shirts" },
-  ];
+const AsideFilter = ({ filters, onFilterChange, gender = "men" }) => {
+  const getCategories = () => {
+    if (gender === "women") {
+      return [
+        { value: "all", label: "All" },
+        { value: "shirts", label: "Shirts" },
+        { value: "sweaters", label: "Sweaters" },
+        { value: "tshirts", label: "T-shirts" },
+        { value: "jackets", label: "Jackets" },
+      ];
+    }
+    return [
+      { value: "all", label: "All" },
+      { value: "sweaters", label: "Sweaters" },
+      { value: "tshirts", label: "T-shirts" },
+    ];
+  };
+
+  const categories = getCategories();
 
   const priceOptions = [
     { value: "all", label: "All" },

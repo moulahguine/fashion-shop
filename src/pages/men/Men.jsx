@@ -15,9 +15,20 @@ const Men = () => {
     const category = searchParams.get("category") || "all";
     const price = searchParams.get("price") || "all";
 
+    // Valid categories for men
+    const validCategories = ["all", "sweaters", "tshirts"];
+    const validPrices = ["all", "high", "low"];
+
+    // Validate category
+    const validCategory = validCategories.includes(category) ? category : "all";
+    const validPrice = validPrices.includes(price) ? price : "all";
+
+    console.log("Men page - Category:", category, "Valid:", validCategory);
+    console.log("Men page - Price:", price, "Valid:", validPrice);
+
     setFilters({
-      category: category,
-      price: price,
+      category: validCategory,
+      price: validPrice,
     });
   }, [searchParams]);
 
@@ -52,6 +63,7 @@ const Men = () => {
             <AsideFilter
               filters={filters}
               onFilterChange={handleFilterChange}
+              gender="men"
             />
           </aside>
 

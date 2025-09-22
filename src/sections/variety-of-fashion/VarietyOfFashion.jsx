@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import variety1 from "../../assets/images/variety/variety1.jpg";
 import variety2 from "../../assets/images/variety/variety2.jpg";
 import variety3 from "../../assets/images/variety/variety3.jpg";
@@ -52,9 +53,9 @@ const VarietyOfFashion = () => {
         {/* Categories Grid */}
         <div className="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 gap-5">
           {categories.map((category) => (
-            <a
+            <Link
               key={category.id}
-              href={category.href}
+              to={category.href}
               className="group h-[450px] relative overflow-hidden border border-gray-200 hover:border-gray-300 transition-colors duration-200"
             >
               {/* Background Image */}
@@ -82,7 +83,7 @@ const VarietyOfFashion = () => {
                   {category.subtitle}
                 </p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
