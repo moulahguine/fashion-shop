@@ -12,7 +12,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden pt-16">
+    <section
+      className="relative w-full overflow-hidden"
+      style={{ height: "calc(100vh - 4rem)" }}
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

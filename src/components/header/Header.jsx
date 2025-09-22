@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../../contexts/CartContext";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  const [isSticky, setIsSticky] = useState(false);
+  const { getTotalItems, toggleCart } = useCart();
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      // Add sticky class when scrolled down more than 10px
+      setIsSticky(scrollY > 10);
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -18,13 +25,14 @@ const Header = () => {
     <>
       {/* Header Wrapper */}
       <header
-        className="fixed top-0 left-0 right-0 z-50 w-full flex justify-center bg-white/80 backdrop-blur-md border-b border-gray-200 transition-all duration-300"
+        className={`w-full flex justify-center bg-white/80 backdrop-blur-md border-b border-gray-200 transition-all duration-300 ${
+          isSticky ? "fixed top-0 left-0 right-0 z-50" : "relative"
+        }`}
         style={{
-          backgroundColor:
-            scrollY > 50
-              ? "rgba(255, 255, 255, 0.9)"
-              : "rgba(255, 255, 255, 0.8)",
-          backdropFilter: scrollY > 50 ? "blur(12px)" : "blur(8px)",
+          backgroundColor: isSticky
+            ? "rgba(255, 255, 255, 0.9)"
+            : "rgba(255, 255, 255, 0.8)",
+          backdropFilter: isSticky ? "blur(12px)" : "blur(8px)",
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -92,7 +100,8 @@ const Header = () => {
               Sign In
             </button>
             <button
-              className="p-2 text-gray-600 hover:text-gray-900 transition"
+              onClick={toggleCart}
+              className="relative p-2 text-gray-600 hover:text-gray-900 transition"
               aria-label="Shopping cart"
             >
               <svg
@@ -108,6 +117,11 @@ const Header = () => {
                   d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                 />
               </svg>
+              {getTotalItems() > 0 && (
+                <span className="absolute -top-1 -right-1 bg-gray-900 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {getTotalItems()}
+                </span>
+              )}
             </button>
 
             {/* Mobile Menu Button */}
@@ -147,7 +161,9 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div
-            className="md:hidden fixed inset-0 z-50 bg-white"
+            className={`md:hidden fixed inset-0 z-50 bg-white ${
+              isSticky ? "top-0" : "top-16"
+            }`}
             id="mobile-menu"
             role="dialog"
             aria-modal="true"
