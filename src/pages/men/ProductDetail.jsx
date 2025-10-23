@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ProductImage from "../../components/product-detail/ProductImage";
 import ProductInfo from "../../components/product-detail/ProductInfo";
-import { getMenProducts } from "../../data/products";
+import { menProducts } from "../../data/menProducts";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -11,8 +11,6 @@ const ProductDetail = () => {
   const [loading, setLoading] = useState(true);
 
   // Get product data from shared source
-  const menProducts = getMenProducts();
-
   useEffect(() => {
     // Find product by ID
     const foundProduct = menProducts.find((p) => p.id === parseInt(id));

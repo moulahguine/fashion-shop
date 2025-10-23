@@ -1,4 +1,3 @@
-import { useState } from "react";
 import productGuide1 from "../../assets/images/products-guide/product_guide1.jpg";
 import productGuide2 from "../../assets/images/products-guide/product_guide2.jpg";
 import productGuide3 from "../../assets/images/products-guide/product_guide3.jpg";
@@ -34,10 +33,10 @@ const ProductsGuide = () => {
   const { handleImageLoad, isImageLoaded } = useImageLoading(productImages);
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
+    <section className="py-25 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <div className="text-center my-24">
+        <div className="text-center mb-15">
           <h2 className="text-4xl md:text-5xl font-serif font-light text-gray-900">
             Products Guide
           </h2>
@@ -48,7 +47,7 @@ const ProductsGuide = () => {
           {products.map((product) => (
             <div
               key={product.id}
-              className="text-center group cursor-pointer relative"
+              className="text-center group cursor-default relative"
             >
               {/* Skeleton Loader - Show while image is loading */}
               {!isImageLoaded(product.id) && (

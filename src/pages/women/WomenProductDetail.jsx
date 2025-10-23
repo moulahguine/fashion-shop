@@ -2,15 +2,13 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ProductImage from "../../components/product-detail/ProductImage";
 import ProductInfo from "../../components/product-detail/ProductInfo";
-import { getWomenProducts } from "../../data/products";
+import { womenProducts } from "../../data/womenProducts";
 
 const WomenProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  const womenProducts = getWomenProducts();
 
   useEffect(() => {
     const foundProduct = womenProducts.find((p) => p.id === parseInt(id));
@@ -20,7 +18,7 @@ const WomenProductDetail = () => {
       navigate("/women");
     }
     setLoading(false);
-  }, [id, navigate, womenProducts]);
+  }, [id, navigate]);
 
   if (loading) {
     return (
