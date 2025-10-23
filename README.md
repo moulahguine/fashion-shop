@@ -6,7 +6,7 @@ A modern, responsive e-commerce fashion store built with React, Tailwind CSS, an
 
 ## Live Demo
 
-[View Live Fashion Shop](https://your-fashion-shop-demo.com)
+[View Live Fashion Shop](https://fashionshop-site.vercel.app)
 
 ## Table of Contents
 
